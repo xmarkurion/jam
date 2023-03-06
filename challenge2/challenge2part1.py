@@ -62,3 +62,5 @@ def problem2_3(message):
             employeesWhoWillGetBonusesCount += 1
 
     return str(employeesWhoWillGetBonusesCount)
+
+    return str(employeesWhoWillGetBonusesCount)
