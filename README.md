@@ -117,7 +117,7 @@ To do so, use the following commands:
 
 ```sh
 # Pull down new challenges
-git pull (TODO: remote URL here) master
+git pull https://github.com/CiscoJamGalway2023/jam.git master
 # Push them up to your fork
 git push
 ```
