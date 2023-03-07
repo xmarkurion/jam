@@ -21,6 +21,16 @@ def problem2_4(message):
     prices = get_prices_input(message)
     mostExpensivePrice = 0
 
+    prices = get_prices_input(message)
+    mostExpensivePrice = 0
+    i = 0
+    while i < len(prices):
+        # See if any subsuquent item is more expensive
+        if prices[i] > mostExpensivePrice:
+            mostExpensivePrice = prices[i]
+
+        i += 1
+
     return str(mostExpensivePrice)
 
 
