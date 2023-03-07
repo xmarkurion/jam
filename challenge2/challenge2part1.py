@@ -49,14 +49,16 @@ def problem2_2(message):
 #Chuck is feeling generous wants to give his German, Danish and Turkish employees a raise. 
 #How many employees have any of the following characters in their name: ẞ, ö, æ, or ç
 
+# Assuming 'name' here refers to the full name and not (name, surname) as challenge 1.4 reffered to 'first name'
 def problem2_3(message):
     all_employees = get_all_employees_input(message)
     employeesWhoWillGetBonusesCount = 0
     specialChars = ['ẞ', 'ö', 'æ', 'ç'] 
 
+# s.find('$')
     for name in all_employees:
-        for character in specialChars:
+        statement = (name.find('æ') > 0 or name.find('ẞ') > 0 or name.find('ö') > 0 or name.find('ç') > 0)
+        if(statement):
             employeesWhoWillGetBonusesCount += 1
-
 
     return str(employeesWhoWillGetBonusesCount)

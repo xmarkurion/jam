@@ -3,6 +3,7 @@
 
 from challenge2part1 import problem2_1
 from challenge2part1 import problem2_2
+from challenge2part1 import problem2_3
 
 all_employees = [
         'JOHNSON WILLIAMS','BROWN JONES','GARçIæ MILLER','DAVIS RODRIGUEZ','MARTINEZ HERNANDEZ','LOPEZ GONZALEZ',
@@ -17,5 +18,6 @@ all_employees = [
 
 print('Bot response:', problem2_1('c'))
 print('Bot response:', problem2_2(all_employees))
+print('Bot response:', problem2_3(all_employees))
 
 
