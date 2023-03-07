@@ -5,5 +5,5 @@ def hello(message):
     #
     # Your job is to process the message so that this function returns the correct outputs for challenge 1.
     # (for now, it just echoes back the same message)
-
-    return message
+    rValue = "Hello, Cisco!"
+    return rValue
