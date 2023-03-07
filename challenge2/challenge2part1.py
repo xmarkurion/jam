@@ -1,3 +1,6 @@
+#Chuck Robbins wants to give a raise to everyone whose first name starts the letter c (upper or lower case), how many employees will get a raise?
+
+
 all_employees = [
         'JOHNSON WILLIAMS','BROWN JONES','GARçIæ MILLER','DAVIS RODRIGUEZ','MARTINEZ HERNANDEZ','LOPEZ GONZALEZ',
         'WILSON ANDERSON','THOMAS TAYLOR','MÖÖRE JACKSON','MARTIN LEE','PEREZ THOMPSON','WHITE HARRIß',
@@ -22,21 +25,41 @@ def problem2_1(message):
     all_employees = get_all_employees_input(message)
     beginsWithLetterCCount = 0
 
+    for x in all_employees:
+        if x[0] == 'c' or x[0] == 'C':
+            beginsWithLetterCCount +=1
 
     return str(beginsWithLetterCCount)
 
+#There’s been a glitch in the ancient payroll system, and some people can’t get paid. 
+#It's been discovered that people with last names which are longer than 8 characters are affected.
+#How many people does this include?
 
 def problem2_2(message):
     all_employees = get_all_employees_input(message)
     peopleWithLongerThan8CharacterLastnamesCount = 0
 
+    for name in all_employees:
+            if len(name) > 8:
+                peopleWithLongerThan8CharacterLastnamesCount = peopleWithLongerThan8CharacterLastnamesCount + 1
+
+
 
     return str(peopleWithLongerThan8CharacterLastnamesCount)
 
 
+
+#Chuck is feeling generous wants to give his German, Danish and Turkish employees a raise. 
+#How many employees have any of the following characters in their name: ẞ, ö, æ, or ç
+
 def problem2_3(message):
     all_employees = get_all_employees_input(message)
     employeesWhoWillGetBonusesCount = 0
+    specialChars = ['ẞ', 'ö', 'æ', 'ç'] 
+
+    for name in all_employees:
+        for character in specialChars:
+            employeesWhoWillGetBonusesCount += 1
 
 
     return str(employeesWhoWillGetBonusesCount)
