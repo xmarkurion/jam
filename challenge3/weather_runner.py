@@ -3,4 +3,8 @@
 
 from weather_command import weather
 
-print('Bot response:', weather('52.52,13.41'))
+#.daily.temperature_2m_max
+#print('Weather from Galway yesterday:', weather('53.270668,-9.056790'))
+print('Bot:', weather('Galway wind'))
+
+

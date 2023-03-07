@@ -17,9 +17,6 @@ measurements = {
 
 def weather(message):
     message = message.lower()
-    town = message.split()[1]
-    if(message.split()[1] > 0):
-        print(town)
 
     # Let's build the API call!
 
@@ -34,20 +31,24 @@ def weather(message):
     date_now = (datetime.now() - timedelta(days=-1)).strftime('%Y-%m-%d')
     daily_params = ['temperature_2m_max', 'rain_sum', 'windspeed_10m_max']
     if len(message) != 0:
-        message.lower
-        temp = city_coords[message]
-        params = {
-            'latitude': temp[0],  # You need to update this
-            'longitude': temp[1], # ... and this
-            'start_date': date_now,
-            'end_date': date_now,
-            'timezone': 'GMT',
-            'daily': daily_params
-        }
+        temp2 = message.split(' ')
+        if len(temp2) == 2:
+            town = temp2[0]
+            measurement = temp2[1]
+            print(town)
+            #Our 3.3 part code unfinished
+        else:
+            temp = city_coords[message]
+            params = {
+                'latitude': temp[0],  # You need to update this
+                'longitude': temp[1], # ... and this
+                'start_date': date_now,
+                'end_date': date_now,
+                'timezone': 'GMT',
+                'daily': daily_params
+            }        
     else:
-        date_now = (datetime.now() - timedelta(days=-1)).strftime('%Y-%m-%d')
-    daily_params = ['temperature_2m_max', 'rain_sum', 'windspeed_10m_max']
-    params = {
+        params = {
         'latitude': 53.270668,  # You need to update this
         'longitude': -9.056790, # ... and this
         'start_date': date_now,
@@ -68,5 +69,6 @@ def weather(message):
     # This is a placeholder response to show how to drill into the info that you're interested in.
     #return response['temperature_2m_max']['time'][0]
     return response['daily']['time'][0]
+    #return response['daily']['time'][0]
 
 
