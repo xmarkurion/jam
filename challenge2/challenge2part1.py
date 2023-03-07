@@ -40,11 +40,8 @@ def problem2_2(message):
     peopleWithLongerThan8CharacterLastnamesCount = 0
 
     for name in all_employees:
-            if len(name) > 8:
-                peopleWithLongerThan8CharacterLastnamesCount = peopleWithLongerThan8CharacterLastnamesCount + 1
-
-
-
+            if len(name.split()[1]) > 8:
+                peopleWithLongerThan8CharacterLastnamesCount += 1
     return str(peopleWithLongerThan8CharacterLastnamesCount)
 
 
