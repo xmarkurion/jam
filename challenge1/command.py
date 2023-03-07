@@ -7,10 +7,11 @@ def hello(message):
     # (for now, it just echoes back the same message)
     if message == "Chuck Robbins":
         return f"Hello Cisco's favourite CEO Chuck Robbins"
-    elif( len(message) > 0 ):
+    if( len(message) > 0 ):
         return f"Hello, {message}!"
     else:
         return f"Hello, Cisco!"
+    
 
 # //If the message length is greater than 0,
 #  you can assume someone entered their name. Return a message in the format **“Hello, (name)!”**.
