@@ -40,7 +40,7 @@ class JamCommand(Command):
         return self.exec_fn(message)
 
 
-my_bot_botName="Jam Bot Team B"
+my_bot_botName="Jellies"
 
 # Create a Bot Object
 bot = WebexBot(teams_bot_token=os.getenv("WEBEX_TEAMS_ACCESS_TOKEN"),
@@ -53,5 +53,4 @@ bot = WebexBot(teams_bot_token=os.getenv("WEBEX_TEAMS_ACCESS_TOKEN"),
 # Round 1
 bot.add_command(JamCommand('hello', 'Hello, Cisco!', hello))
 
-
-bot.run()
+bot.run()   
