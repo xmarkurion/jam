@@ -53,7 +53,7 @@ def problem2_2(message):
 def problem2_3(message):
     all_employees = get_all_employees_input(message)
     employeesWhoWillGetBonusesCount = 0
-    specialChars = ['ẞ', 'ö', 'æ', 'ç'] 
+    specialChars = ['ẞ', 'ö', 'æ', 'ç'] #we are taking only these specific chars, not upper case 
 
 # s.find('$')
     for name in all_employees:
