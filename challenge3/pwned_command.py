@@ -20,12 +20,14 @@ def has_email_been_pwned(email):
     }
 
     # Make your GET request here!
+    response = requests.get(url, params=params).json()
+    
 
-    pwned_times = 0 # This is where you come in!
+    pwned_times = response # This is where you come in!
     pwned_message = f'Oh no you have been pwned. The email "{email}" appeared in {pwned_times} breaches.'
     not_pwned_message = f'All good! The email "{email}" was never pwned.'
 
-    return 'Not yet implemented :('
+    return sum(response)
 
 
 def get_sha1_hash(password):
@@ -53,17 +55,32 @@ def has_password_been_pwned(password):
     #   GOOD LUCK!
 
     hash = get_sha1_hash(password)
-    hash_prefix = '' # This is where you come in!
+    hash_prefix = hash[0,4] # This is where you come in!
     url = f'https://api.pwnedpasswords.com/range/{hash_prefix}'  # NOTE: this url response is in `text` rather than `json()`
 
     # Make your GET request here!
+    #GET 
+
+    headers = {
+        'User-Agent': 'cisco-jam',
+        'hibp-api-key': API_TOKEN,
+    }
+
+    # Make your GET request here!
+    response = requests.get(url, params=params).json()
 
 
+    passwordPawnedCounter = 0
+    candititeHashes = dict(response.items)
     # Now you have a list of candidate hashes. From those, you'll need to count which ones
     # equal the full length hash you have above.
+    for key in candititeHashes
+        if(hash == key.value) {
+            passwordPawnedCounter += 1
+        }
 
     # Now it's time to build the correct response message. You will have to update the pwned_message!
     all_good = f'All good! Your password was never pwned'
-    pwned_message = f'Oh no you have been pwned. The password "{password}" appeared {0} times'
+    pwned_message = f'Oh no you have been pwned. The password "{password}" appeared {passwordPawnedCounter} times'
 
     return pwned_message
