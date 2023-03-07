@@ -17,6 +17,9 @@ measurements = {
 
 def weather(message):
     message = message.lower()
+    town = message.split()[1]
+    if(message.split()[1] > 0):
+        print(town)
 
     # Let's build the API call!
 
@@ -30,14 +33,30 @@ def weather(message):
 
     date_now = (datetime.now() - timedelta(days=-1)).strftime('%Y-%m-%d')
     daily_params = ['temperature_2m_max', 'rain_sum', 'windspeed_10m_max']
+    if len(message) != 0:
+        message.lower
+        temp = city_coords[message]
+        params = {
+            'latitude': temp[0],  # You need to update this
+            'longitude': temp[1], # ... and this
+            'start_date': date_now,
+            'end_date': date_now,
+            'timezone': 'GMT',
+            'daily': daily_params
+        }
+    else:
+        date_now = (datetime.now() - timedelta(days=-1)).strftime('%Y-%m-%d')
+    daily_params = ['temperature_2m_max', 'rain_sum', 'windspeed_10m_max']
     params = {
-        'latitude': 0,  # You need to update this
-        'longitude': 0, # ... and this
+        'latitude': 53.270668,  # You need to update this
+        'longitude': -9.056790, # ... and this
         'start_date': date_now,
         'end_date': date_now,
         'timezone': 'GMT',
         'daily': daily_params
     }
+
+        #Part 3.1 here HINT: INCLUDE PARAMS HERE
 
     # This makes a request to the weather API with the above info.
     response = requests.get('https://api.open-meteo.com/v1/forecast', params=params).json()
@@ -47,4 +66,7 @@ def weather(message):
     print(json.dumps(response, indent=4))
 
     # This is a placeholder response to show how to drill into the info that you're interested in.
+    #return response['temperature_2m_max']['time'][0]
     return response['daily']['time'][0]
+
+
