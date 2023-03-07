@@ -69,18 +69,16 @@ def has_password_been_pwned(password):
     # Make your GET request here!
     response = requests.get(url, params=params).json()
 
-
-    passwordPawnedCounter = 0
     candititeHashes = dict(response.items)
     # Now you have a list of candidate hashes. From those, you'll need to count which ones
     # equal the full length hash you have above.
-    for key in candititeHashes
-        if(hash == key.value) {
-            passwordPawnedCounter += 1
-        }
+    for key in candititeHashes:
+        if(hash == key.value):
+            count(key.value)
+        
 
     # Now it's time to build the correct response message. You will have to update the pwned_message!
     all_good = f'All good! Your password was never pwned'
-    pwned_message = f'Oh no you have been pwned. The password "{password}" appeared {passwordPawnedCounter} times'
+    pwned_message = f'Oh no you have been pwned. The password "{password}" appeared {count(key.value)} times'
 
     return pwned_message
