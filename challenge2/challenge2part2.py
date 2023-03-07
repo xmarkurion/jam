@@ -36,15 +36,17 @@ def problem2_4(message):
 
 def problem2_5(message):
     prices = get_prices_input(message)
-    totalCost = 0
-
+    totalCost = sum(prices)
+    
 
     return str(totalCost)
 
 
 def problem2_6(message):
     prices = get_prices_input(message)
-    totalCost = 0
+    
+    new_list = [i * 11.03 for i in prices]
+    totalCost = math.ceil(sum(new_list))
 
 
     return str(totalCost)
